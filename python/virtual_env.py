@@ -10,5 +10,12 @@
 # https://pypi.org/ 
 # We use pip to install packages from PYPI
 
+# Command Line Args & Environment Variables
+# Frequently used tasks we can use modules avaialble in PYPI, and also comes with python installation, 
+# bundled with python installation
+# sys module ---> can be use dto read parameters passed to python script from command line
+# To call a python script from command line
+# python addition.py 2 add 3
+#sys.argv(1) # first argument after script name
 
-
+#
