@@ -1,0 +1,5 @@
+127.0.0.1 - - [10/Sep/2025:14:20:15 +0000] "GET /index.html HTTP/1.1" 200 1024 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+192.168.1.10 - john [10/Sep/2025:14:21:03 +0000] "POST /login HTTP/1.1" 302 512 "http://example.com/login" "Mozilla/5.0 (X11; Linux x86_64)"
+203.0.113.5 - - [10/Sep/2025:14:22:48 +0000] "GET /images/logo.png HTTP/2.0" 200 2048 "http://example.com" "Chrome/117.0.5938.92"
+198.51.100.23 - jane [10/Sep/2025:14:23:09 +0000] "GET /dashboard HTTP/1.1" 403 768 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
+10.0.0.5 - - [10/Sep/2025:14:24:30 +0000] "DELETE /api/user/123 HTTP/1.1" 204 0 "https://api.example.com" "curl/8.1.0"

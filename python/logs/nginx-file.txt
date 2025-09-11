@@ -1,0 +1,5 @@
+12:10:10 serverIP:10.3.4.5 UIR /home/website responseCode 400 TTL:2200
+12:10:10 serverIP:10.3.4.4 UIR /home/website responseCode 200 TTL:2200
+12:10:10 serverIP:10.3.4.5 UIR /home/website responseCode 400 TTL:2200
+12:10:10 serverIP:10.3.4.4 UIR /home/website responseCode 504 TTL:2200
+
