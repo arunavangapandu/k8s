@@ -79,3 +79,56 @@ print(inst1.multiply_matrix_dict(dict1, dict2))
 
 
 
+class MatrixM:
+    def __init__(self, matrix):
+        self.matrix = matrix
+        self.rows = len(matrix)
+        self.cols = len(matrix[0]) if matrix else 0
+        self.storage = self.store_matrix()
+
+    def store_matrix(self):
+        storage_dict = {}
+        for i, row in enumerate(self.matrix):
+            for j, val in enumerate(row):
+                if val != 0:
+                    storage_dict[(i, j)] = val
+        return storage_dict
+
+    def pretty_print(self):
+        for i in range(self.rows):
+            row = []
+            for j in range(self.cols):
+                row.append(str(self.storage.get((i, j), 0)))
+            print(" ".join(row))
+
+    def add(self, other):
+        if self.rows != other.rows or self.cols != other.cols:
+            raise ValueError("Matrix dimensions must match for addition")
+        
+        result = {}
+        result.update(self.storage)
+        
+        for (i, j), val in other.storage.items():
+            result[(i, j)] = result.get((i, j), 0) + val
+        
+        return MatrixM(self.dict_to_matrix(result))
+
+    def multiply(self, other):
+        if self.cols != other.rows:
+            raise ValueError("Matrix A's columns must equal Matrix B's rows")
+        
+        result = {}
+        for (i, k), val_a in self.storage.items():
+            for j in range(other.cols):
+                if (k, j) in other.storage:
+                    result[(i, j)] = result.get((i, j), 0) + val_a * other.storage[(k, j)]
+        
+        return MatrixM(self.dict_to_matrix(result, self.rows, other.cols))
+
+    def dict_to_matrix(self, d, rows=None, cols=None):
+        rows = rows or self.rows
+        cols = cols or self.cols
+        matrix = [[0]*cols for _ in range(rows)]
+        for (i, j), val in d.items():
+            matrix[i][j] = val
+        return matrix
