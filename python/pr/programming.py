@@ -38,26 +38,24 @@ class MatrixM:
             for col in row:
                 if col != 0:
                     storage_dict[key] = col
-            key = key + 1
+                    key += 1
        # print(storage_dict)
         return storage_dict
 
     def add_matrix_dict(self, dict1, dict2):
         result = []
-        for value1, value2 in zip(self.dict1.values(), self.dict2.values()):
+        for value1, value2 in zip(dict1.values(), dict2.values()):
             result.append(value1 + value2)
         return result
 
-
-
-
-
-
-
-
+    def multiply_matrix_dict(self, dict1, dict2):
+        result = []
+        for value1, value2 in zip(dict1.values(), dict2.values()):
+            result.append(value1 * value2)
+        return result
 
 matrixA = [
-    [0,0,3],
+    [0,1,3],
     [0,5,0],
     [6,0,0]
 ]
@@ -76,6 +74,8 @@ print(dict1)
 print(dict2)
 
 #add_matrix_dict(dict1, dict2)
-add_matrix_dict(inst1.store_matrix(), inst2.store_matrix())
+print(inst1.add_matrix_dict(dict1, dict2))
+print(inst1.multiply_matrix_dict(dict1, dict2))
+
 
 
