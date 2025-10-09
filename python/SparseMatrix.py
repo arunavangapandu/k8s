@@ -78,7 +78,7 @@ print(inst1.add_matrix_dict(dict1, dict2))
 print(inst1.multiply_matrix_dict(dict1, dict2))
 
 
-class MatrixM:
+class SparseMatrix:
     def __init__(self, matrix):
         self.matrix = matrix
         self.rows = len(matrix)
